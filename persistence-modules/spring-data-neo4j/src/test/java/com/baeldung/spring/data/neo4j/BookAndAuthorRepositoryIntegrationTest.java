@@ -24,11 +24,11 @@ public class BookAndAuthorRepositoryIntegrationTest {
     @BeforeAll
     static void initializeNeo4j() {
         newServer = Neo4jBuilders.newInProcessBuilder()
-          .withDisabledServer()
-          .withFixture("CREATE (b:Book {isbn: '978-0547928210', name: 'The Fellowship of the Ring', year: 1954})" +
-            "-[:WRITTEN_BY]->(a:Author {id: 1, name: 'J. R. R. Tolkien'})" +
-            "CREATE (b2:Book {isbn: '978-0547928203', name: 'The Two Towers', year: 1956})-[:WRITTEN_BY]->(a)")
-        .build();
+                .withDisabledServer()
+                .withFixture("CREATE (b:Book {isbn: '978-0547928210', name: 'The Fellowship of the Ring', year: 1954})" +
+                        "-[:WRITTEN_BY]->(a:Author {id: 1, name: 'J. R. R. Tolkien'})" +
+                        "CREATE (b2:Book {isbn: '978-0547928203', name: 'The Two Towers', year: 1956})-[:WRITTEN_BY]->(a)")
+                .build();
     }
 
     @AfterAll
